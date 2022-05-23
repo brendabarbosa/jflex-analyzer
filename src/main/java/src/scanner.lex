@@ -12,9 +12,9 @@ celular =  \(\d{2}\)\s?\d{4,5}\-?\d{4}
 placa = [A-Za-z]{3}\d{4}
 cpf = \d{3}\.\d{3}.\d{3}\-\d{2}
 numeroreal = \-*\d+\.?\d*
-tag = <\/?[A-Za-z]\s*[A-Za-z0-9 \"\"\'\'\=\.\-\:]*>
+tag = (\<\w*)((\s{0,1}\/\>)|(.*\<\/\w*\>))
 url = https?:\/\/(www\.)?[-a-zA-Z0-9]{2,256}\.[a-z]*\b([-a-zA-Z0-9@:%_\+.~#?&\/=]*)
-palava = [A-Za-zà-úÀ-Ú]*
+palavra = [A-Za-zà-úÀ-Ú]*
 identificador = [a-zA-Z][a-zA-Z0-9\_]*
 cnpj = \d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}
 
@@ -35,7 +35,7 @@ cnpj = \d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}
 {numeroreal} {tokens.add(new Token(yyline,yytext(), "NUMERO REAL"));}
 {tag}  {tokens.add(new Token(yyline,yytext(), "TAG"));}
 {url}  {tokens.add(new Token(yyline,yytext(), "URL"));}
-{palava}  {tokens.add(new Token(yyline,yytext(), "PALAVRA"));}
+{palavra}  {tokens.add(new Token(yyline,yytext(), "PALAVRA"));}
 {identificador} {tokens.add(new Token(yyline,yytext(), "IDENTIFICADOR"));}
 {cnpj} {tokens.add(new Token(yyline,yytext(), "CNPJ"));}
 
