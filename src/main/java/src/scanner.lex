@@ -8,15 +8,17 @@ import Token.java;
 %class LexicalAnalyzer
 %line
 
-celular =  \(\d{2}\)\s?\d{4,5}\-?\d{4}
-placa = [A-Za-z]{3}\d{4}
-cpf = \d{3}\.\d{3}.\d{3}\-\d{2}
-numeroreal = \-*\d+\.?\d*
-tag = (\<\w*)((\s{0,1}\/\>)|(.*\<\/\w*\>))
-url = https?:\/\/(www\.)?[-a-zA-Z0-9]{2,256}\.[a-z]*\b([-a-zA-Z0-9@:%_\+.~#?&\/=]*)
-palavra = [A-Za-zà-úÀ-Ú]*
-identificador = [a-zA-Z][a-zA-Z0-9\_]*
-cnpj = \d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}
+LineTerminator = \r|\n|\r\n
+WhiteSpace = {LineTerminator} | [ \t\f]
+
+Type = int|char|float
+Identifier = [a-zA-Z][a-zA-Z0-9\_]*
+IdentifierList = ,{WhiteSpace}?{Identifier}
+AddIdentifier = {Identifier}{IdentifierList}*
+Variables = {Type}{WhiteSpace}{AddIdentifier}
+Declaration = {Variables}";"
+
+
 
 %{
 	ArrayList<Token> tokens = new ArrayList<>();
@@ -24,19 +26,11 @@ cnpj = \d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}
 
 %eof{
 
-	tokens.forEach(token -> System.out.println("LINHA: "+token.getLine()+"   "+token.getText()+" - "+token.getType()));
+	tokens.forEach(token -> System.out.println("LINHA: "+token.getLine()+"   "+token.getText()));
 
 %eof}
 
 %%
-{celular} {tokens.add(new Token(yyline,yytext(), "CELULAR"));}
-{placa}  {tokens.add(new Token(yyline,yytext(), "PLACA"));}
-{cpf}  {tokens.add(new Token(yyline,yytext(), "CPF"));}
-{numeroreal} {tokens.add(new Token(yyline,yytext(), "NUMERO REAL"));}
-{tag}  {tokens.add(new Token(yyline,yytext(), "TAG"));}
-{url}  {tokens.add(new Token(yyline,yytext(), "URL"));}
-{palavra}  {tokens.add(new Token(yyline,yytext(), "PALAVRA"));}
-{identificador} {tokens.add(new Token(yyline,yytext(), "IDENTIFICADOR"));}
-{cnpj} {tokens.add(new Token(yyline,yytext(), "CNPJ"));}
 
-. {/* caracteres não reconhecidos */}
+{Declaration} {tokens.add(new Token(yyline,yytext(), ""));}
+. {/* */}
