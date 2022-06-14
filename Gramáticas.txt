@@ -15,3 +15,11 @@ Gramática Etapa 2:
 <OperadorR> ::= ==  | != | <= | >= | < | >
 <Comando>  ::= id <OperadorM> id; | id <OperadorM> id; <Comando>
 <OperadorM> ::= + | - | * | /
+
+Gramática Etapa 3
+
+<While> ::= while(<Cond>) {<Comando>}
+<Inc> ::= <Ident>++
+<Dec> ::= <Ident>--
+<IncDec> ::= <Inc> | <Dec>
+<For> ::= for(<Decl>; <Cond>; <IncDec>) {<Comando>}

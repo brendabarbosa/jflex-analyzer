@@ -27,3 +27,6 @@ int v2, v3, a123, teste_123; int v2, v3, a123, teste_123;
 if(teste){ asdasd }
 if(teste) 
 if(teste)
+
+while(teste1>teste2){a1*a2;}
+for(int a; teste1>teste2; a++){a1*a2;}
