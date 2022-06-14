@@ -1,0 +1,17 @@
+Gramática Etapa 1:
+
+<S> ::= <Decl>;| <Decl>;<S>
+<Decl> ::= <Tipo><Vars> | <Tipo><Ident>
+<Vars> ::= <Ident> , <Vars> | <Ident>
+<Ident> ::= id
+<Tipo> ::= int|char|float
+ 
+
+Gramática Etapa 2:
+
+<If> ::= if(<Cond>) {<Comando>} <Else>
+<Else> ::= else{<Comando>} | ε
+<Cond> ::= id <OperadorR> id
+<OperadorR> ::= ==  | != | <= | >= | < | >
+<Comando>  ::= id <OperadorM> id; | id <OperadorM> id; <Comando>
+<OperadorM> ::= + | - | * | /

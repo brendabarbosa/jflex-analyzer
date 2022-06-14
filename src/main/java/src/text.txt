@@ -1,11 +1,29 @@
-int v1, v2, v3;
-int v1,
-int v1,v2,v3;
+if(teste){
 int v1;
-blue b1,b2;
-char variavel_teste;
-char var1,var2;
-double 123;
-double a_asd;
-float a123_asd,a123;
-float 123;
+if(condicao)
+if(condicao){comando}
+if(condicao){comando
+if(condicao){comando} else { comando }
+if(condicao){a1*a2} else { comando }
+if(condicao){a1*a2;} else {a1*a2;}
+if(condicao){a1*a2;} else {a1* a2;}
+if(teste1>teste2){a1*a2;} else {a1* a2;}
+
+if(teste1>teste2){
+	a1*a2;
+	var_teste*var_teste1;
+	teste/teste;
+}else{
+	a1*a2;
+}
+
+if(condicao){a2+a3;} else { comando }
+if(condicao){a1 * a2} else { a2+a3; }
+
+if(condicao){comando}else{comando}
+
+if(condicao){comando}else { comando 
+int v2, v3, a123, teste_123; int v2, v3, a123, teste_123;
+if(teste){ asdasd }
+if(teste) 
+if(teste)
