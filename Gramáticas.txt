@@ -15,3 +15,10 @@ Gramática Etapa 2:
 <OperadorR> ::= ==  | != | <= | >= | < | >
 <Comando>  ::= id <OperadorM> id; | id <OperadorM> id; <Comando>
 <OperadorM> ::= + | - | * | /
+
+<Switch> ::= switch(id) { <Cases> <Default> }
+<Cases> ::= case<Numero>: {<Comando>} break; | case<Numero>: {<Comando>} break; <Cases>
+<Default> :: default: {<Comando>} | ε
+<Comando>  ::= id <OperadorM> id; | id <Operador> id; <Comando>
+<Operador> ::= + | - | * | /
+<Numero> ::= 1|2|...|99

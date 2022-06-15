@@ -17,6 +17,66 @@ if(teste1>teste2){
 	a1*a2;
 }
 
+
+
+switch(teste1){
+}
+switch(teste1){}
+switch(teste1){
+default: { a1+a2; }
+}
+
+switch(teste1){
+	case1:{
+		a1+a2;
+	}
+}
+
+switch(teste1){
+	case1:{
+		a1+a2;
+	}
+	case2: {
+		qwe4_w * asd13;
+	}
+	default:{
+		abc * def;
+	}
+}
+
+switch(teste1){
+	case1:{
+		a1+a2;
+	}
+	case2: {
+		qwe4_w * asd13;
+	}
+	default:{
+		abc * def;
+	}
+
+
+switch(teste1){
+	case1:{
+		a1+a2
+	}
+	case2: {
+		qwe4_w * asd13;
+	}
+	default:{
+		abc * def;
+	}
+}
+
+switch(teste1){
+	case2: {
+		qwe4_w * asd13;
+	}
+	default:{
+		abc * def;
+	}
+}
+
 if(condicao){a2+a3;} else { comando }
 if(condicao){a1 * a2} else { a2+a3; }
 

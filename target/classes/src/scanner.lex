@@ -40,6 +40,10 @@ GreaterThanEqualTo = \>\=
 RelationalOperator = {EqualTo} | {NotEqualTo} | {LessThan} | {GreaterThan} | {LessThanEqualTo} | {GreaterThanEqualTo}
 
 
+Switch = switch \( {Identifier} \) {WhiteSpace}* \{ {Cases}+ {Default}? \}
+Cases = {WhiteSpace}*case\d{1,2}{WhiteSpace}*\:{CommandStatement}
+Default = {WhiteSpace}*default\:{WhiteSpace}*\{ {Command}+ \}{WhiteSpace}*
+
 %{
 	ArrayList<Token> tokens = new ArrayList<>();
 %}
@@ -54,4 +58,6 @@ RelationalOperator = {EqualTo} | {NotEqualTo} | {LessThan} | {GreaterThan} | {Le
 
 {Declaration} {tokens.add(new Token(yyline,yytext(), ""));}
 {If} {tokens.add(new Token(yyline,yytext(), ""));}
+{Switch} {tokens.add(new Token(yyline,yytext(), ""));}
+
 . {/* */}
