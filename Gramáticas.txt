@@ -13,12 +13,18 @@ Gramática Etapa 2:
 <Else> ::= else{<Comando>} | ε
 <Cond> ::= id <OperadorR> id
 <OperadorR> ::= ==  | != | <= | >= | < | >
-<Comando>  ::= id <OperadorM> id; | id <OperadorM> id; <Comando>
+<Comando>  ::= id <OperadorA> ( id |  id <OperadorM> id) ; <addComando> 
+<addComando> ::= <Comando> | ε
 <OperadorM> ::= + | - | * | /
+<OperadorA> ::= = | += | -= | *= | /=
 
 <Switch> ::= switch(id) { <Cases> <Default> }
-<Cases> ::= case<Numero>: {<Comando>} break; | case<Numero>: {<Comando>} break; <Cases>
+<Cases> ::= case <OpcCase>: {<Comando>} break; | case <OpcCase>: {<Comando>} break; <Cases>
+<OpcCase> ::= id | <Numero> | "<Palavra>"
 <Default> :: default: {<Comando>} | ε
-<Comando>  ::= id <OperadorM> id; | id <Operador> id; <Comando>
-<Operador> ::= + | - | * | /
+<Comando>  ::= id <OperadorA> ( id |  id <OperadorM> id) ; <addComando> 
+<addComando> ::= <Comando> | ε
+<OperadorM> ::= + | - | * | /
 <Numero> ::= 1|2|...|99
+<Palavra> ::= a|b|...|z
+<OperadorA> ::= = | += | -= | *= | /=
