@@ -26,5 +26,5 @@ Gramática Etapa 2:
 <addComando> ::= <Comando> | ε
 <OperadorM> ::= + | - | * | /
 <Numero> ::= 1|2|...|99
-<Palavra> ::= a|b|...|z
+<Palavra> ::= a|b|...|z |A|B|...|Z | <Palavra>
 <OperadorA> ::= = | += | -= | *= | /=
