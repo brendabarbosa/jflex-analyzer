@@ -1,29 +1,24 @@
-if(teste){
-int v1;
-if(condicao)
-if(condicao){comando}
-if(condicao){comando
-if(condicao){comando} else { comando }
-if(condicao){a1*a2} else { comando }
-if(condicao){a1*a2;} else {a1*a2;}
-if(condicao){a1*a2;} else {a1* a2;}
-if(teste1>teste2){a1*a2;} else {a1* a2;}
-
-if(teste1>teste2){
-	a1*a2;
-	var_teste*var_teste1;
-	teste/teste;
+if(teste > teste2){
+	number = n1 + n2;
+	number = n3;	
 }else{
-	a1*a2;
+	number -= n3;	
+	number -= n1 + n2;	
 }
 
-if(condicao){a2+a3;} else { comando }
-if(condicao){a1 * a2} else { a2+a3; }
 
-if(condicao){comando}else{comando}
-
-if(condicao){comando}else { comando 
-int v2, v3, a123, teste_123; int v2, v3, a123, teste_123;
-if(teste){ asdasd }
-if(teste) 
-if(teste)
+switch (valor){
+    case 1: {
+	    number = n1 + n2;
+	    break;
+	}
+	case 2: {
+	    number = n1 + n2;
+	    break;
+	}
+	default: 
+	{
+		var = teste;
+	}
+  }
+ 
