@@ -1,9 +1,9 @@
 if(teste > teste2){
 	number = n1 + n2;
-	number = n3;	
+	number = n3;
 }else{
-	number -= n3;	
-	number -= n1 + n2;	
+	number -= n3;
+	number -= n1 + n2;
 }
 
 
@@ -16,9 +16,16 @@ switch (valor){
 	    number = n1 + n2;
 	    break;
 	}
-	default: 
+	default:
 	{
 		var = teste;
 	}
   }
- 
+
+while(teste > 1) {
+    number = n1 + n2;
+}
+
+for(int a;a<10;a++) {
+    number = n1 + n2;
+}
