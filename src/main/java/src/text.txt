@@ -22,5 +22,10 @@ switch (valor){
 	}
   }
 
-while(teste1>teste2){a1*a2;}
-for(int a; teste1>teste2; a++){a1*a2;}
+while(teste > 1) {
+    number = n1 + n2;
+}
+
+for(int a;a<10;a++) {
+    number = n1 + n2;
+}
