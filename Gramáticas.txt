@@ -4,7 +4,7 @@ Gramática Etapa 1:
 <Decl> ::= <Tipo><Vars> | <Tipo><Ident>
 <SingleDecl> ::= <Tipo><Ident>
 <Vars> ::= <Ident> , <Vars> | <Ident>
-<Ident> ::= id
+<Ident> ::= id | id[num]
 <Tipo> ::= int|char|float
  
 

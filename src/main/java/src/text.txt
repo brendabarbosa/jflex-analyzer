@@ -1,3 +1,5 @@
+char string[9219], caracter;
+
 if(teste > teste2){
 	number = n1 + n2;
 	number = n3;
@@ -22,10 +24,10 @@ switch (valor){
 	}
   }
 
-while(teste > 1) {
+while (teste > 1) {
     number = n1 + n2;
 }
 
-for(int a;a<10;a++) {
+for (int a; a<10; a++){
     number = n1 + n2;
 }
