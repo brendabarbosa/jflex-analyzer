@@ -37,7 +37,7 @@ Dec = {Identifier}{Subtract}{Subtract}
 IncDec = {Inc} | {Dec}
 
 Type = int|char|float
-Identifier = [a-zA-Z][a-zA-Z0-9\_]{0,70}(\[ \d\d?\d? \])?
+Identifier = [a-zA-Z][a-zA-Z0-9\_]*(\[ \d+ \])?
 IdentifierList = ,{WS}?{Identifier}
 AddIdentifier = {Identifier}{IdentifierList}*
 Variable = {Type}{WS}{Identifier}

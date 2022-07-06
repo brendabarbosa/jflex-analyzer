@@ -37,3 +37,9 @@ Gramática Etapa 3:
 <Dec> ::= <Ident>--
 <IncDec> ::= <Inc> | <Dec>
 <For> ::= for(<SingleDecl>; <Cond>; <IncDec>) {<Comando>}
+<Cond> ::= id <OperadorR> id
+<OperadorR> ::= ==  | != | <= | >= | < | >
+<Comando>  ::= id <OperadorA> ( id |  id <OperadorM> id) ; <addComando>
+<addComando> ::= <Comando> | ε
+<OperadorM> ::= + | - | * | /
+<OperadorA> ::= = | += | -= | *= | /=

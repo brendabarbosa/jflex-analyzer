@@ -1,4 +1,4 @@
-char string[9219], caracter;
+char string[6], caracter;
 
 if(teste > teste2){
 	number = n1 + n2;
