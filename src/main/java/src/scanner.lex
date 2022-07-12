@@ -73,6 +73,8 @@ For = for {WS}* \({SingleDeclaration}{WS}*{Condition};{WS}*{IncDec}\) {CommandSt
 %eof{
 
 	commands.forEach(command -> System.out.println(" LINHA: "+command.getLine()+" - "+command.getType()));
+	System.out.println("");
+	commands.forEach(command -> System.out.println("\nLINHA: "+command.getLine()+" - "+command.getType()+"\n"+command.getText()));
 
 %eof}
 
@@ -84,4 +86,4 @@ For = for {WS}* \({SingleDeclaration}{WS}*{Condition};{WS}*{IncDec}\) {CommandSt
 {While} {commands.add(new Command(yyline,yytext(), "WHILE"));}
 {For} {commands.add(new Command(yyline,yytext(), "FOR"));}
 
-. {/* */}
+. { /* */ }

@@ -1,7 +1,6 @@
 char string[6], caracter;
 int n1;
 
-
 if(teste > teste2){
 	number = n1 + n2;
 	number = 2 + 2;

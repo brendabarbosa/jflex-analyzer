@@ -784,6 +784,8 @@ class Analyzer {
     
 
 	commands.forEach(command -> System.out.println(" LINHA: "+command.getLine()+" - "+command.getType()));
+	System.out.println("");
+	commands.forEach(command -> System.out.println("\nLINHA: "+command.getLine()+" - "+command.getType()+"\n"+command.getText()));
 
     }
   }
