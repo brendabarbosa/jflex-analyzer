@@ -71,16 +71,16 @@ For = for {WS}* \({SingleDeclaration}{WS}*{Condition};{WS}*{IncDec}\) {CommandSt
 
 %eof{
 
-	tokens.forEach(token -> System.out.println("LINHA: "+token.getLine()+"   "+token.getText()));
+	tokens.forEach(token -> System.out.println(token.getType()+" - LINHA: "+token.getLine()+"   \n"+token.getText()+"\n"));
 
 %eof}
 
 %%
 
-{Declaration} {tokens.add(new Token(yyline,yytext(), ""));}
-{If} {tokens.add(new Token(yyline,yytext(), ""));}
-{Switch} {tokens.add(new Token(yyline,yytext(), ""));}
-{While} {tokens.add(new Token(yyline,yytext(), ""));}
-{For} {tokens.add(new Token(yyline,yytext(), ""));}
+{Declaration} {tokens.add(new Token(yyline,yytext(), "Declaração"));}
+{If} {tokens.add(new Token(yyline,yytext(), "IF"));}
+{Switch} {tokens.add(new Token(yyline,yytext(), "Switch"));}
+{While} {tokens.add(new Token(yyline,yytext(), "While"));}
+{For} {tokens.add(new Token(yyline,yytext(), "For"));}
 
 . {/* */}
