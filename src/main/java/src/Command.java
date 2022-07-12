@@ -1,12 +1,12 @@
 package src;
 
-public class Token {
+public class Command {
 
 	private int line;
 	private String text;
 	private String type;
 	
-	public Token(int line, String text, String type) {
+	public Command(int line, String text, String type) {
 		this.line = line+1;
 		this.text = text;
 		this.type = type;

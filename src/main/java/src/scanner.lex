@@ -1,11 +1,11 @@
 package src;
 
 import java.util.*;
-import Token.java;
+import Command.java;
 %%
 
 %standalone
-%class LexicalAnalyzer
+%class Analyzer
 %line
 
 LineTerminator = \r|\n|\r\n
@@ -45,8 +45,9 @@ Variables = {Type}{WS}+{AddIdentifier}
 SingleDeclaration = {Variable}";"
 Declaration = {Variables}";"
 
-MathOperation = {WS}*{Identifier}{WS}* {MathOperator} {WS}*{Identifier}{WS}*
-Command = {WS}*{Identifier}{WS}* {AssignmentOperators} ({MathOperation} | {WS}*{Identifier}{WS}*) \; {WS}*
+MathOperation = {WS}*{Value}{WS}* {MathOperator} {WS}*{Value}{WS}*
+Value = {Identifier} | [0-9]+
+Command = {WS}*{Identifier}{WS}* {AssignmentOperators} ({MathOperation} | {WS}*{Value}{WS}*) \; {WS}*
 CommandStatement  = {WS}* \{ {Command}+ \} {WS}*
 
 Condition = {WS}* {ConditionValue} {WS}* {RelationalOperator} {WS}* {ConditionValue} {WS}*
@@ -66,21 +67,21 @@ For = for {WS}* \({SingleDeclaration}{WS}*{Condition};{WS}*{IncDec}\) {CommandSt
 
 
 %{
-	ArrayList<Token> tokens = new ArrayList<>();
+	ArrayList<Command> commands = new ArrayList<>();
 %}
 
 %eof{
 
-	tokens.forEach(token -> System.out.println(token.getType()+" - LINHA: "+token.getLine()+"   \n"+token.getText()+"\n"));
+	commands.forEach(command -> System.out.println(" LINHA: "+command.getLine()+" - "+command.getType()));
 
 %eof}
 
 %%
 
-{Declaration} {tokens.add(new Token(yyline,yytext(), "Declaração"));}
-{If} {tokens.add(new Token(yyline,yytext(), "IF"));}
-{Switch} {tokens.add(new Token(yyline,yytext(), "Switch"));}
-{While} {tokens.add(new Token(yyline,yytext(), "While"));}
-{For} {tokens.add(new Token(yyline,yytext(), "For"));}
+{Declaration} {commands.add(new Command(yyline,yytext(), "DECLARACAO"));}
+{If} {commands.add(new Command(yyline,yytext(), "IF"));}
+{Switch} {commands.add(new Command(yyline,yytext(), "SWITCH"));}
+{While} {commands.add(new Command(yyline,yytext(), "WHILE"));}
+{For} {commands.add(new Command(yyline,yytext(), "FOR"));}
 
 . {/* */}

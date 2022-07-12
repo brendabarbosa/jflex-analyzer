@@ -1,23 +1,14 @@
 char string[6], caracter;
 int n1;
-double n2,n3;
-int n2;n3;
 
 
 if(teste > teste2){
 	number = n1 + n2;
-	number = n3;
+	number = 2 + 2;
 }else{
 	number -= n3;
-	number -= n1 + n2;
+	number += n1 + n2;
 }
-
-if(teste > teste2){
-	number = n1 + n2;
-else{
-	number -= n3
-}
-
 
 switch (valor){
     case 1: {
@@ -27,19 +18,6 @@ switch (valor){
 	case 2: {
 	    number = n1 + n2;
 	    break;
-	}
-	default:
-	{
-		var = teste;
-	}
- }
-
-switch (valor){
-    case 1: {
-	    number = n1 + n2;
-	}
-	case 2: {
-	    number = n1 + n2;
 	}
 	default:
 	{
@@ -50,16 +28,8 @@ switch (valor){
 
 while (teste > 1) {
     number = n1 + n2;
-}
-
-while (teste > 1) {
-    number = n1 + n2
 }
 
 for (int a; a<10; a++){
-    number = n1 + n2;
-}
-
-for (int a, a<10, a++){
     number = n1 + n2;
 }

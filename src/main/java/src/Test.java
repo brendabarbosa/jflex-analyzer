@@ -13,7 +13,7 @@ public class Test {
 		String subPath = "/src/main/java/src/";
 		Path file = Path.of(rootPath + subPath +"text.txt");
 		String text = Files.readString(file, StandardCharsets.ISO_8859_1); 
-		LexicalAnalyzer lexical = new LexicalAnalyzer(new StringReader(text));
+		Analyzer lexical = new Analyzer(new StringReader(text));
 		lexical.yylex();
 	}
 
