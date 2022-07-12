@@ -20,14 +20,11 @@ Gramática Etapa 2:
 <OperadorA> ::= = | += | -= | *= | /=
 
 <Switch> ::= switch(id) { <Cases> <Default> }
-<Cases> ::= case <OpcCase>: {<Comando>} break; | case <OpcCase>: {<Comando>} break; <Cases>
-<OpcCase> ::= id | <Numero> | "<Palavra>"
+<Cases> ::= case num: {<Comando>} break; | case <OpcCase>: {<Comando>} break; <Cases>
 <Default> :: default: {<Comando>} | ε
 <Comando>  ::= id <OperadorA> ( id |  id <OperadorM> id) ; <addComando>
 <addComando> ::= <Comando> | ε
 <OperadorM> ::= + | - | * | /
-<Numero> ::= 1|2|...|99
-<Palavra> ::= a|b|...|z |A|B|...|Z | <Palavra>
 <OperadorA> ::= = | += | -= | *= | /=
 
 Gramática Etapa 3:

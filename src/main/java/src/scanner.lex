@@ -38,20 +38,20 @@ IncDec = {Inc} | {Dec}
 
 Type = int|char|float
 Identifier = [a-zA-Z][a-zA-Z0-9\_]*(\[ \d+ \])?
-IdentifierList = ,{WS}?{Identifier}
 AddIdentifier = {Identifier}{IdentifierList}*
-Variable = {Type}{WS}{Identifier}
-Variables = {Type}{WS}{AddIdentifier}
+IdentifierList = ,{WS}*{Identifier}
+Variable = {Type}{WS}+{Identifier}
+Variables = {Type}{WS}+{AddIdentifier}
 SingleDeclaration = {Variable}";"
 Declaration = {Variables}";"
 
 MathOperation = {WS}*{Identifier}{WS}* {MathOperator} {WS}*{Identifier}{WS}*
-CommandStatement  = {WS}* \{ {Command}+ \} {WS}*
 Command = {WS}*{Identifier}{WS}* {AssignmentOperators} ({MathOperation} | {WS}*{Identifier}{WS}*) \; {WS}*
+CommandStatement  = {WS}* \{ {Command}+ \} {WS}*
 
-If = if\({Condition}\) {CommandStatement} {Else}?
-ConditionValue = {Identifier} | [a-zA-Z0-9\_]*
 Condition = {WS}* {ConditionValue} {WS}* {RelationalOperator} {WS}* {ConditionValue} {WS}*
+ConditionValue = {Identifier} | \"[a-zA-Z0-9\_]*\" | [0-9]+
+If = if\({Condition}\) {CommandStatement} {Else}?
 Else = {WS}* else {CommandStatement}
 
 Switch = switch {WS}* \( {WS}* {Identifier} {WS}* \) {WS}* \{ {Cases}+ \}
@@ -59,7 +59,7 @@ Cases = {WS}*case {CaseOption} {WS}*\: {SwitchCommandStatement} {Default}?
 Default = {WS}*default\:{WS}*\{ {Command}+ \}{WS}*
 SwitchCommandStatement  = {WS}* \{ {Command}+ {Break} \} {WS}*
 Break = {WS}* break {WS}*;{WS}*
-CaseOption = {WS}+({Identifier} | \"[a-zA-Z]+\" | [0-9]){WS}*
+CaseOption = {WS}+([0-9]+){WS}*
 
 While = while {WS}* \({Condition}\) {CommandStatement}
 For = for {WS}* \({SingleDeclaration}{WS}*{Condition};{WS}*{IncDec}\) {CommandStatement}
